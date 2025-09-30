@@ -1,4 +1,4 @@
-**👾 Credits **
+**👾 Credits**
 
 This project was made possible thanks to a talented and dedicated team:
 
