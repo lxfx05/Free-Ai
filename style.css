@@ -2,7 +2,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #0529a9, #000000);
+background: #020024;
+background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 55%, rgba(14, 96, 150, 1) 100%);
   color: white;
   min-height: 100vh;
   display: flex;
@@ -41,19 +42,19 @@ p {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.3rem;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 150, 255, 1.2);
 }
 
 .card:active {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Icon styling */
