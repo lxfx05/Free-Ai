@@ -1,191 +1,36 @@
-{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root{
-  --bg-1: #0a2a4f;
-  --bg-2: #000000;
-  --card-bg: rgba(255,255,255,0.05);
-  --card-border: rgba(255,255,255,0.08);
-  --accent: rgba(96, 173, 255, 0.12);
-  --card-radius: 16px;
-  --text: #f0f0f0;
-}
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden; /* previene scroll orizzontale */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  animation: pageBg 12s ease-in-out infinite alternate;
-}
-
-/* subtle animated gradient background */
-@keyframes pageBg {
-  0% { background-position: 0% 20%;}
-  100% { background-position: 100% 80%;}
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-  backdrop-filter: blur(8px);
-  background-color: rgba(10, 42, 79, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-  z-index: 2;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-header p {
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
-
-/* Vertical column container (no horizontal scroll) */
-.grid {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom right, #000428, #004e92); /* nero → blu */
   display: flex;
-  flex-direction: column; /* una sotto l'altra */
-  gap: 1.5rem;
-  padding: 2rem;
-  align-items: center; /* centra le card orizzontalmente */
-  width: 100%;
-  max-width: 1100px; /* limita larghezza della colonna */
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Card style with blur */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card {
-  width: 100%;
-  max-width: 800px; /* dimensione massima della card */
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius);
-  padding: 1.75rem 1.5rem;
-  backdrop-filter: blur(12px) saturate(120%);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-  text-align: left;
-  transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 200ms, background-color 300ms;
-  border: 1px solid var(--card-border);
+  width: 300px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1); /* semi-trasparente */
+  backdrop-filter: blur(10px); /* effetto blur sullo sfondo */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
   position: relative;
-  opacity: 0;
-  transform: translateY(18px) scale(0.995);
-  will-change: transform, opacity;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
 }
 
-/* Icon area */
-.icon {
-  font-size: 2.4rem;
-  margin-right: 1rem;
-  color: #fff;
-  flex: 0 0 auto;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.25);
-}
-
-/* Card text */
-.card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.35rem;
-  color: #ffffff;
-}
-
-.card p {
-  font-size: 0.98rem;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-/* Hover / focus micro-interactions */
-.card:hover,
-.card:focus-within {
-  transform: translateY(-8px) rotateX(1deg) scale(1.01);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
-  background-color: rgba(255,255,255,0.065);
-  outline: none;
-}
-
-/* Decorative accent glow that appears on hover */
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent 0%, rgba(96,173,255,0.03) 50%, transparent 100%);
-  opacity: 0;
-  transition: opacity 300ms;
-}
-.card:hover::after { opacity: 1;}
-
-/* Staggered entrance animation using CSS variables */
-.grid.card {
-  animation: cardIn 560ms cubic-bezier(.2,.9,.3,1) forwards;
-  /* default delay fallback */
-  animation-delay: 120ms;
-}
-
-/* If you want explicit staggering from HTML, add style="--i:0" etc. */
-.grid.card {
-  --i: 0;
-  animation-delay: calc(var(--i) * 120ms + 80ms);
-}
-
-@keyframes cardIn {
-  from { opacity: 0; transform: translateY(18px) scale(0.995);}
-  to   { opacity: 1; transform: translateY(0) scale(1);}
-}
-
-/* Focus accessibility */
-.card:focus {
-  box-shadow: 0 0 0 4px rgba(96,173,255,0.12), 0 18px 36px rgba(0,0,0,0.6);
-  transform: translateY(-8px) scale(1.01);
-}
-
-/* Responsive tweaks */
-@media (max-width: 720px) {
-  header h1 { font-size: 1.8rem;}
-.grid { padding: 1.25rem; gap: 1rem;}
-.card { padding: 1.25rem; max-width: 100%;}
-.icon { width: 48px; height: 48px; font-size: 1.6rem; border-radius: 10px;}
-}
-
-/* Optional: compact list appearance (if you want the cards stretced full width of container) */
-.grid.fullwidth.card {
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-/* Small decorative floating accent (subtle) */
-.page-accent {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(96,173,255,0.18), transparent 40%), rgba(255,255,255,0.02);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
-  pointer-events: none;
-  opacity: 0.9;
-  transform: translateY(0);
-  transition: transform 350ms;
+.card:hover {
+  transform: scale(1.2); /* macrozoom */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
