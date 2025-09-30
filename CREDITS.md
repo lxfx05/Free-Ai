@@ -6,7 +6,7 @@ This project was made possible thanks to a talented and dedicated team:
   Led the implementation of core features and overall architecture.
 
 **📊 Data Analysis:** Alex Bergamini
-  Focused on password strength evaluation and algorithm optimization.
+  Focused on App & Data creation
 
 **🎨 UI/UX Management:** Sara De Franceschi
   Designed the user interface and experience, ensuring clarity and usability.
