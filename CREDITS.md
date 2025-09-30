@@ -2,8 +2,7 @@
 
 This project was made possible thanks to a talented and dedicated team:
 
-**👨‍💻 Development:** _Luca Finaldi_
-  Led the implementation of core features and overall architecture.
+**👨‍💻 Development:** _Luca Finaldi_  Led the implementation of core features and overall architecture.
 
 **📊 Data Analysis:** _Alex Bergamini_
   Focused on App & Data creation
