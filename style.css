@@ -13,7 +13,7 @@ body {
 /* Header styling */
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 5px, 5px;
 }
 
 h1 {
@@ -33,7 +33,7 @@ p {
   gap: 2rem;
   padding: 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 /* Card styling with blur and zoom */
