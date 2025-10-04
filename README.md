@@ -21,12 +21,6 @@ The site features four main utilities:
 
 ## 🎨 Visual Themes
 
-The site supports two visual modes:
-
-- **Light Theme**: white background with blue gradient cards.
-- **Dark Theme**: black background with deep blue gradient cards.
-
-The theme adapts automatically to system preferences, with manual switching available.
 
 ## 🚀 Technologies Used
 
