@@ -19,9 +19,6 @@ The site features four main utilities:
 - 🤖 **Free Bot**
   A free-form bot to ask anything, offering controlled and transparent responses.
 
-## 🎨 Visual Themes
-
-
 ## 🚀 Technologies Used
 
 - **HTML5** – Semantic page structure
