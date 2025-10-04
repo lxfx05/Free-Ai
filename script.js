@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (firstTool) {
     firstTool.style.cursor = "pointer";
     firstTool.addEventListener("click", () => {
-      window.location.href = "https://lxfx05.github.io/Code-translator/";
+      window.location.href = "https://github.com/lxfx05/Code-translator/tree/main";
 });
 }
 });
