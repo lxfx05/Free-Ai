@@ -16,9 +16,6 @@ The site features four main utilities:
 - 💻 **Code Helper**
   Assist with code writing through simple and secure suggestions.
 
-- ✅ **Task Creator**
-  Organize and create tasks intuitively, without invasive automation.
-
 - 🤖 **Free Bot**
   A free-form bot to ask anything, offering controlled and transparent responses.
 
