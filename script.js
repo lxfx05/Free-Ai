@@ -1,5 +1,5 @@
-// Redirect 1 card 
-const cardOne = document.getElementById("tool-1");
+// Code Translator)
+  const cardOne = document.getElementById("tool-1");
   if (cardOne) {
     cardOne.style.cursor = "pointer";
     cardOne.addEventListener("click", () => {
