@@ -27,7 +27,7 @@ The site features four main utilities:
 
 ## 📁 Project Structure
 
-``freeai-projectct/
+```freeai-projectct/
 ├── index.html       # Page structure
 ├── styles.css       # Styling and themes
 ├── script.js        # Interactive functions
