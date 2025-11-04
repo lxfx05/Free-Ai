@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tool) return;
     tool.style.cursor = "default";
     tool.addEventListener("click", () => {
-      tool.textContent = "Sito attualmente non disponibile. Sto lavorando su questo tool!";
+      tool.textContent = "Project in via of deployedment, but now is not aviable, come soon later";
       tool.style.color = "#ffdddd"; // evidenzia il testo
     });
   };
