@@ -5,6 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FreeAI Tools</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Layout generale dark */
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 50px;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border: 2px solid white;
+      border-radius: 15px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .card .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,7 +77,8 @@
       <h2>Free Bot</h2>
       <p>A free bot to ask anything, delivering clear and controlled answers.</p>
     </section>
-    <script src="script.js"></script>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
