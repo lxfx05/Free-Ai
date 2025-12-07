@@ -6,15 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const notAvailableMsg =
     "Project under deployment, but it's not available now. Come back later.";
 
-  // 1️⃣ Primo tool: redirect normale
   if (firstTool) {
-    firstTool.style.cursor = "pointer";
-    firstTool.addEventListener("click", () => {
+  firstTool.style.cursor = "pointer";
+  firstTool.addEventListener("click", () => {
+    const p = firstTool.querySelector("p");
+    if (p) {
+      p.style.transition = "color 0.6s ease";
+      p.style.color = "#3399ff"; // blu
+      p.textContent = "Redirecting now...";
+    }
+    setTimeout(() => {
       window.location.href = "https://code-translator-xi-dusky.vercel.app/";
-    });
+    }, 500); 
+  });
   }
-
-  // 2️⃣ Secondo tool: messaggio + colore graduale rosso
+  
   if (secondTool) {
     secondTool.style.cursor = "pointer";
     secondTool.addEventListener("click", () => {
@@ -25,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3️⃣ Terzo tool: messaggio + colore graduale arancione + redirect dopo 2s
   if (thirdTool) {
     thirdTool.style.cursor = "pointer";
     thirdTool.addEventListener("click", () => {
