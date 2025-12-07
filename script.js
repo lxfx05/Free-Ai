@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     thirdTool.addEventListener("click", () => {
       const p = thirdTool.querySelector("p");
       p.style.transition = "color 0.6s ease";
-      p.textContent = notAvailableMsg;
+      p.textContent = "Project under deployment, but now available, redirecting...";
       p.style.color = "#ff9933";
 
       setTimeout(() => {
