@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Terzo tool (Free Bot): pop-up + redirect
   if (thirdTool) {
   thirdTool.style.cursor = "pointer";
+    thirdTool.addEventListener("click", () => {
+  thirdTool.textContent = "Project is being deployed — but, now is now Please wait...";
+  thirdTool.style.color = "#ffdddd";
 
-  thirdTool.addEventListener("click", () => {
-    thirdTool.textContent = "Project is being deployed — but, now is now Please wait...";
-    thirdTool.style.color = "#ffdddd";
-
-    setTimeout(() => {
-      window.location.href = "https://code-gpt-lilac.vercel.app/";
-    }, 1300);
-  });message
+  setTimeout(() => {
+    window.location.href = "https://code-gpt-lilac.vercel.app/";
+  }, 1300);
+});
+    
