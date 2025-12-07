@@ -16,7 +16,7 @@ The site features four main utilities:
 - 💻 **Code Helper**
   Assist with code writing through simple and secure suggestions.
 
-- 🤖 **F̶r̶e̶e̶ b̶o̶t̶**
+- 🤖 **Free Bot (in deployment)**
   A free-form bot to ask anything, offering controlled and transparent responses.
 
 ## 🚀 Technologies Used
