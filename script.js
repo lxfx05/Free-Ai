@@ -19,12 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     secondTool.style.cursor = "pointer";
     secondTool.addEventListener("click", () => {
       const p = secondTool.querySelector("p");
-
-      // Attiva transizione armoniosa
       p.style.transition = "color 0.6s ease";
-
       p.textContent = notAvailableMsg;
-      p.style.color = "#ff5555"; // rosso morbido
+      p.style.color = "#ff5555";
     });
   }
 
@@ -33,15 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
     thirdTool.style.cursor = "pointer";
     thirdTool.addEventListener("click", () => {
       const p = thirdTool.querySelector("p");
-
-      // Attiva transizione armoniosa
       p.style.transition = "color 0.6s ease";
-
       p.textContent = notAvailableMsg;
-      p.style.color = "#ff9933"; // arancione
+      p.style.color = "#ff9933";
 
-      // Redirect dopo 2 secondi
       setTimeout(() => {
         window.location.href = "https://code-gpt-lilac.vercel.app/";
       }, 2000);
     });
+  }
+});
