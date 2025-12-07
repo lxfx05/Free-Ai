@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const firstTool = document.getElementById("tool-1");
   const secondTool = document.getElementById("tool-2");
@@ -12,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (secondTool) {
     secondTool.style.cursor = "default";
-    secondTool.addEventListener("click", () => {
+    secondTool.addEventListener("click", (e) => {
+      e.stopPropagation();
       secondTool.textContent = "Project in via of deployedment, but now is not aviable, come soon later";
       secondTool.style.color = "#ffdddd";
 });
@@ -20,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (thirdTool) {
     thirdTool.style.cursor = "default";
-    thirdTool.addEventListener("click", () => {
+    thirdTool.addEventListener("click", (e) => {
+      e.stopPropagation();
       thirdTool.textContent = "Project in via of deployedment, but now is not aviable, come soon later";
       thirdTool.style.color = "#ffdddd";
       window.location.href = "https://github.com/lxfx05/Code-gpt";
