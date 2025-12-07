@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (firstTool) {
     firstTool.style.cursor = "pointer";
     firstTool.addEventListener("click", () => {
-      window.location.href = "https://github.com/lxfx05/Code-translator/tree/main";
+      window.location.href = "https://code-translator-xi-dusky.vercel.app/";
     });
   }
 
