@@ -45,4 +45,3 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "https://code-gpt-lilac.vercel.app/";
       }, 2000);
     });
-Code-gpt
