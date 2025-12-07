@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const firstTool = document.getElementById("tool-1");
   const secondTool = document.getElementById("tool-2");
