@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   thirdTool.style.cursor = "pointer";
 
   thirdTool.addEventListener("click", () => {
-    thirdTool.textContent = "Project is being deployed — not available right now. Please wait...";
+    thirdTool.textContent = "Project is being deployed — but, now is now Please wait...";
     thirdTool.style.color = "#ffdddd";
 
     setTimeout(() => {
