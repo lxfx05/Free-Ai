@@ -22,9 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Terzo tool (Free Bot): pop-up + redirect
   if (thirdTool) {
-    thirdTool.style.cursor = "pointer";
-    thirdTool.addEventListener("click", () => {
-      alert("⚠️ Attenzione: il progetto è ancora in fase di produzione!");
+   if (secondTool) {
+    secondTool.style.cursor = "default";
+    secondTool.addEventListener("click", () => {
+      secondTool.textContent = "Project in via of deployedment, but now is not aviable, come soon later";
+      secondTool.style.color = "#ffdddd";
+    });
+  }
       window.location.href = "https://github.com/lxfx05/Code-gpt";
     });
   }
