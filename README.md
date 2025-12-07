@@ -1,4 +1,4 @@
-UpscalerreeAI
+**Free-Ai**
 
 **FreeAI** is a web project designed to reduce excessive reliance on artificial intelligence by offering simple, secure, and controllable tools that enhance productivity without replacing human input.
 
