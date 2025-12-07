@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     p.style.transition = "color 0.6s ease";
-    p.style.color = "#3399ff"; 
+    p.style.color = "#008000"; 
     p.textContent = "Redirecting now...";
 
     setTimeout(() => {
