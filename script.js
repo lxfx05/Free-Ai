@@ -9,17 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
   if (firstTool) {
   firstTool.style.cursor = "pointer";
   firstTool.addEventListener("click", () => {
-    const p = firstTool.querySelector("p");
-    if (p) {
-      p.style.transition = "color 0.6s ease";
-      p.style.color = "#3399ff"; // blu
-      p.textContent = "Redirecting now...";
+    let p = firstTool.querySelector("p");
+
+    if (!p) {
+      p = document.createElement("p");
+      firstTool.appendChild(p);
     }
+
+    p.style.transition = "color 0.6s ease";
+    p.style.color = "#3399ff"; 
+    p.textContent = "Redirecting now...";
+
     setTimeout(() => {
       window.location.href = "https://code-translator-xi-dusky.vercel.app/";
     }, 500); 
   });
   }
+  
   
   if (secondTool) {
     secondTool.style.cursor = "pointer";
