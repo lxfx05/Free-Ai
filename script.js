@@ -42,11 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
     thirdTool.addEventListener("click", () => {
       const p = thirdTool.querySelector("p");
       p.style.transition = "color 0.6s ease";
-      p.textContent = "Project under deployment, but now available, redirecting...";
-      p.style.color = "#ff9933";
+      p.style.color = "#008000"; 
+      p.textContent = "Redirecting now...";
+      
 
       setTimeout(() => {
-        window.location.href = "https://code-gpt-lilac.vercel.app/";
+        window.location.href = "https://lxfx05.github.io/Codebot-Ai-/";
       }, 2000);
     });
   }
