@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
 
       setTimeout(() => {
-        window.location.href = "https://lxfx05.github.io/Codebot-Ai-/";
+        window.location.href = "https://codebot-ai.vercel.app/";
       }, 2000);
     });
   }
