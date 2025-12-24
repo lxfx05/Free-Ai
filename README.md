@@ -10,7 +10,7 @@ To provide a lightweight and transparent alternative to heavy AI systems, empowe
 
 The site features four main utilities:
 
-- 🖼️ **I̶m̶a̶g̶e̶ u̶p̶s̶c̶a̶l̶e̶r̶**
+- 🖼️ **Image Upscaler**
   Enhance image quality using optimized, lightweight algorithms.
 
 - 💻 **Code Helper**
