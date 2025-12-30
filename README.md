@@ -10,13 +10,13 @@ To provide a lightweight and transparent alternative to heavy AI systems, empowe
 
 The site features four main utilities:
 
-- 🖼️ **Image Upscaler**
+- 🖼️ **Image Upscaler (in deployment...)**
   Enhance image quality using optimized, lightweight algorithms.
 
 - 💻 **Code Helper**
   Assist with code writing through simple and secure suggestions.
 
-- 🤖 **Free Bot (in deployment)**
+- 🤖 **Free Bot**
   A free-form bot to ask anything, offering controlled and transparent responses.
 
 ## 🚀 Technologies Used
