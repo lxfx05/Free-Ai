@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const secondTool = document.getElementById("tool-2");
   const thirdTool = document.getElementById("tool-3");
 
-  // Funzione universale per il redirect con stile uniforme
+  // Funzione universale per il redirect con feedback visivo
   const handleRedirect = (element, url) => {
     if (!element) return;
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (p) {
         p.style.transition = "color 0.6s ease";
-        p.style.color = "#4ade80"; // Verde brillante per il feedback
+        p.style.color = "#4ade80"; // Verde successo
         p.textContent = "Redirecting now...";
       }
 
@@ -23,11 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Configurazione Redirect con i link corretti
+  // 1. Code Translator
   if (firstTool) handleRedirect(firstTool, "https://code-translator-xi-dusky.vercel.app/");
   
-  // SECONDA CARD: Link aggiornato alla Gallery
-  if (secondTool) handleRedirect(secondTool, "https://gallery-blond-six.vercel.app/");
+  // 2. Ore Li K (Destinazione corretta per la card Gallery)
+  if (secondTool) handleRedirect(secondTool, "https://ore-li-k.vercel.app/");
   
+  // 3. CodeBot AI
   if (thirdTool) handleRedirect(thirdTool, "https://codebot-ai.vercel.app/");
 });
