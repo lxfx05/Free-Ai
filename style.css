@@ -8,11 +8,7 @@
     --card-glow: rgba(59, 130, 246, 0.15);
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     background-color: var(--bg); 
@@ -28,45 +24,12 @@ body {
 }
 
 /* Progress Bar */
-.progress-wrap { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 3px; 
-    background: transparent; 
-    z-index: 1001; 
-}
+.progress-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: transparent; z-index: 1001; }
+#scrollBar { height: 100%; background: var(--accent); width: 0%; box-shadow: 0 0 10px var(--accent); }
 
-#scrollBar { 
-    height: 100%; 
-    background: var(--accent); 
-    width: 0%; 
-    box-shadow: 0 0 10px var(--accent); 
-}
-
-header { 
-    text-align: center; 
-    margin-bottom: 4rem; 
-    max-width: 800px; 
-}
-
-h1 { 
-    font-family: 'Space Grotesk'; 
-    font-size: 2.8rem; 
-    letter-spacing: -2px; 
-    margin-bottom: 12px; 
-}
-
-.accent-dot {
-    color: var(--accent);
-}
-
-header p { 
-    color: var(--text-dim); 
-    font-size: 1.1rem; 
-    line-height: 1.5; 
-}
+header { text-align: center; margin-bottom: 4rem; max-width: 800px; }
+h1 { font-family: 'Space Grotesk'; font-size: 2.8rem; letter-spacing: -2px; margin-bottom: 12px; }
+header p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.5; }
 
 /* Grid Layout */
 .grid { 
@@ -95,78 +58,18 @@ header p {
     box-shadow: 0 20px 40px var(--card-glow); 
 }
 
-.card i { 
-    font-size: 2.2rem; 
-    color: var(--accent); 
-    margin-bottom: 1.2rem; 
-}
-
-.card h3 { 
-    font-family: 'Space Grotesk'; 
-    font-size: 1.6rem; 
-    margin-bottom: 10px; 
-    color: #fff; 
-}
-
-.card p { 
-    font-size: 0.95rem; 
-    color: var(--text-dim); 
-    line-height: 1.6; 
-    margin-bottom: 25px; 
-    flex-grow: 1; 
-}
+.card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.2rem; }
+.card h3 { font-family: 'Space Grotesk'; font-size: 1.6rem; margin-bottom: 10px; color: #fff; }
+.card p { font-size: 0.95rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
 
 /* Buttons */
-.btn-flex { 
-    display: flex; 
-    gap: 12px; 
-}
+.btn-flex { display: flex; gap: 12px; }
+.btn-p { flex: 1.2; padding: 14px; border-radius: 16px; background: var(--accent); color: white; text-align: center; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
+.btn-s { flex: 1; padding: 14px; border-radius: 16px; background: rgba(120,120,128,0.1); color: var(--text); text-align: center; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 0.5px solid var(--border); transition: 0.3s; }
 
-.btn-p { 
-    flex: 1.2; 
-    padding: 14px; 
-    border-radius: 16px; 
-    background: var(--accent); 
-    color: white; 
-    text-align: center; 
-    text-decoration: none; 
-    font-weight: 700; 
-    font-size: 0.85rem; 
-    transition: 0.3s; 
-}
-
-.btn-s { 
-    flex: 1; 
-    padding: 14px; 
-    border-radius: 16px; 
-    background: rgba(120,120,128,0.1); 
-    color: var(--text); 
-    text-align: center; 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 0.85rem; 
-    border: 0.5px solid var(--border); 
-    transition: 0.3s; 
-}
-
-.btn-p:hover { 
-    filter: brightness(1.15); 
-    transform: scale(1.02); 
-}
-
-.btn-s:hover { 
-    background: rgba(120,120,128,0.2); 
-    border-color: var(--text-dim); 
-}
+.btn-p:hover { filter: brightness(1.15); transform: scale(1.02); }
+.btn-s:hover { background: rgba(120,120,128,0.2); border-color: var(--text-dim); }
 
 /* Reveal Animation */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: 0.8s ease-out; 
-}
-
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
