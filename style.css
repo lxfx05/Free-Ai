@@ -1,77 +1,60 @@
-:root {
-    --bg-color: #0a0a0a;
-    --card-bg: #161618;
-    --text-main: #ffffff;
-    --text-dim: #8e8e93;
-    --accent-blue: #3b82f6;
-    --btn-gray: #2c2c2e;
-}
+/* --- Stili per i Pulsanti e le Label --- */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Scroll Progress */
-.progress-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1000; }
-#scrollBar { height: 100%; background: var(--accent-blue); width: 0%; transition: width 0.1s; }
-
-header { text-align: center; margin-bottom: 50px; max-width: 600px; }
-
-h1 { font-size: 3rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 15px; }
-h1 span { color: var(--accent-blue); margin-left: 4px; }
-
-header p { color: var(--text-dim); font-size: 1.1rem; }
-
-.container { 
+.btn-group { 
     display: flex; 
-    flex-direction: column; 
-    gap: 25px; 
-    width: 100%; 
-    max-width: 450px; 
+    gap: 12px; 
+    width: 100%;
 }
-
-/* Card Style */
-.card {
-    background: var(--card-bg);
-    padding: 40px 30px;
-    border-radius: 40px; /* Bordi molto arrotondati come in foto */
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.card i { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 20px; }
-
-.card h3 { font-size: 1.8rem; margin-bottom: 15px; }
-
-.card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 30px; }
-
-/* Buttons Style */
-.btn-group { display: flex; gap: 15px; }
 
 .btn {
     flex: 1;
     padding: 16px;
-    border-radius: 20px; /* Stile a pillola */
+    border-radius: 20px; /* Bordi a pillola come da foto */
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: opacity 0.2s;
+    font-size: 0.85rem;
+    text-transform: uppercase; /* Rende VISIT, TEST, CREATE più autoritari */
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-primary { background-color: var(--accent-blue); color: white; }
-.btn-secondary { background-color: var(--btn-gray); color: white; }
+/* Pulsante d'azione principale (VISIT, TEST, CREATE) */
+.btn-primary { 
+    background-color: var(--accent-blue); 
+    color: #ffffff; 
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
 
-.btn:hover { opacity: 0.8; }
+.btn-primary:hover {
+    background-color: #58a6ff; /* Schiarisce al passaggio */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
 
-/* Reveal Animation */
-.reveal { opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* Pulsante secondario (README) */
+.btn-secondary { 
+    background-color: var(--btn-gray); 
+    color: #ffffff; 
+}
+
+.btn-secondary:hover {
+    background-color: #3a3a3c;
+    transform: translateY(-2px);
+}
+
+/* Feedback al click */
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Responsive: su schermi molto piccoli i pulsanti vanno uno sopra l'altro */
+@media (max-width: 350px) {
+    .btn-group {
+        flex-direction: column;
+    }
+}
