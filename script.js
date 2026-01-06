@@ -4,9 +4,9 @@ const updateUI = () => {
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     
-    const scrollBar = document.getElementById('scrollBar');
-    if (scrollBar) {
-        scrollBar.style.width = scrolled + "%";
+    const scrollElement = document.getElementById('scrollBar');
+    if (scrollElement) {
+        scrollElement.style.width = scrolled + "%";
     }
     
     // Animazione comparsa card al volo
@@ -18,9 +18,8 @@ const updateUI = () => {
     });
 };
 
-// Event listeners
 window.addEventListener('scroll', updateUI);
 window.addEventListener('load', updateUI);
 
-// Trigger iniziale per elementi già in vista
+// Trigger iniziale per elementi già visibili
 setTimeout(updateUI, 100);
