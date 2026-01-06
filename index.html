@@ -4,51 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Finaldi | Systems Architect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --bg: #050507; 
+            --surface: rgba(18, 18, 23, 0.85); 
+            --text: #f4f4f5; 
+            --text-dim: #9494a3;
+            --accent: #3b82f6; 
+            --border: rgba(255,255,255,0.08);
+            --card-glow: rgba(59, 130, 246, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        .progress-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: transparent; z-index: 1001; }
+        #scrollBar { height: 100%; background: var(--accent); width: 0%; box-shadow: 0 0 10px var(--accent); }
+
+        header { text-align: center; margin-bottom: 4rem; max-width: 800px; }
+        h1 { font-family: 'Space Grotesk'; font-size: 2.8rem; letter-spacing: -2px; margin-bottom: 12px; }
+        header p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.5; }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 1.5rem; 
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .card { 
+            background: var(--surface); 
+            backdrop-filter: blur(20px);
+            padding: 2.5rem; 
+            border-radius: 32px; 
+            border: 1px solid var(--border); 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--accent); 
+            box-shadow: 0 20px 40px var(--card-glow); 
+        }
+
+        .card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.2rem; }
+        .card h3 { font-family: 'Space Grotesk'; font-size: 1.6rem; margin-bottom: 10px; color: #fff; }
+        .card p { font-size: 0.95rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+
+        .btn-flex { display: flex; gap: 12px; }
+        .btn-p { flex: 1.2; padding: 14px; border-radius: 16px; background: var(--accent); color: white; text-align: center; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
+        .btn-s { flex: 1; padding: 14px; border-radius: 16px; background: rgba(120,120,128,0.1); color: var(--text); text-align: center; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 0.5px solid var(--border); transition: 0.3s; }
+        
+        .btn-p:hover { filter: brightness(1.15); transform: scale(1.02); }
+        .btn-s:hover { background: rgba(120,120,128,0.2); border-color: var(--text-dim); }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
 
     <div class="progress-wrap"><div id="scrollBar"></div></div>
 
     <header class="reveal">
-        <h1>Sistemi Core<span>.</span></h1>
+        <h1>Sistemi Core <span style="color:var(--accent)">.</span></h1>
         <p>Ingegneria del software, architetture backend e intelligenza artificiale applicata.</p>
     </header>
 
-    <main class="container">
+    <main class="grid">
         <div class="card reveal">
             <i class="fas fa-robot"></i>
             <h3>CodeBot AI</h3>
-            <p>Sistema avanzato di audit e supporto al debugging potenziato da modelli LLM locali e cloud.</p>
-            <div class="btn-group">
-                <a href="https://github.com/lxfx05/Codebot-Ai-/blob/main/README.md" target="_blank" class="btn btn-secondary">README</a>
-                <a href="https://codebot-ai.vercel.app/" target="_blank" class="btn btn-primary">VISIT</a>
+            <p>Sistema avanzato di audit e supporto al debugging potenziato da modelli LLM per l'analisi del codice in tempo reale.</p>
+            <div class="btn-flex">
+                <a href="https://github.com/lxfx05/Codebot-Ai-/blob/main/README.md" target="_blank" class="btn-s">README</a>
+                <a href="https://codebot-ai.vercel.app/" target="_blank" class="btn-p">VISIT</a>
             </div>
         </div>
 
         <div class="card reveal">
-            <i class="fas fa-brain"></i>
-            <h3>Free-Ai</h3>
-            <p>Framework open-source per l'integrazione di intelligenza artificiale in architetture full-stack moderne.</p>
-            <div class="btn-group">
-                <a href="https://github.com/lxfx05/Free-Ai/blob/main/README.md" target="_blank" class="btn btn-secondary">README</a>
-                <a href="https://lxfx05.github.io/Free-Ai/" target="_blank" class="btn btn-primary">TEST SYSTEM</a>
+            <i class="fas fa-layer-group"></i>
+            <h3>Visual Gallery</h3>
+            <p>Interfaccia immersiva per l'esplorazione di asset multimediali con focus su performance e fluidità dell'interfaccia.</p>
+            <div class="btn-flex">
+                <a href="https://github.com/lxfx05" target="_blank" class="btn-s">REPO</a>
+                <a href="https://gallery-blond-six.vercel.app/" target="_blank" class="btn-p">OPEN</a>
             </div>
         </div>
 
         <div class="card reveal">
             <i class="fas fa-terminal"></i>
             <h3>Translator</h3>
-            <p>Motore di conversione sintattica progettato per la migrazione rapida di logica tra diversi linguaggi.</p>
-            <div class="btn-group">
-                <a href="https://github.com/lxfx05/Code-Translator/blob/main/README.md" target="_blank" class="btn btn-secondary">README</a>
-                <a href="https://code-translator-xi-dusky.vercel.app/" target="_blank" class="btn btn-primary">CONVERT</a>
+            <p>Motore di conversione sintattica progettato per la migrazione rapida di logica tra diversi linguaggi di programmazione.</p>
+            <div class="btn-flex">
+                <a href="https://github.com/lxfx05/Code-Translator/blob/main/README.md" target="_blank" class="btn-s">README</a>
+                <a href="https://code-translator-xi-dusky.vercel.app/" target="_blank" class="btn-p">CONVERT</a>
             </div>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        const updateUI = () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const bar = document.getElementById('scrollBar');
+            if(bar) bar.style.width = scrolled + "%";
+            
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 50) el.classList.add('active');
+            });
+        };
+
+        window.addEventListener('scroll', updateUI);
+        window.addEventListener('load', updateUI);
+        setTimeout(updateUI, 100);
+    </script>
 </body>
 </html>
