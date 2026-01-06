@@ -1,34 +1,59 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const firstTool = document.getElementById("tool-1");
-  const secondTool = document.getElementById("tool-2");
-  const thirdTool = document.getElementById("tool-3");
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollBar = document.getElementById('scrollBar');
+    const revealElements = document.querySelectorAll('.reveal');
 
-  // Funzione universale per il redirect con feedback visivo
-  const handleRedirect = (element, url) => {
-    if (!element) return;
+    // Funzione aggiornamento UI (Scroll + Reveal)
+    const updateUI = () => {
+        // Scroll progress
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollBar.style.width = scrolled + "%";
 
-    element.style.cursor = "pointer";
-    element.addEventListener("click", () => {
-      let p = element.querySelector("p");
+        // Reveal animation
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                el.classList.add('active');
+            }
+        });
+    };
 
-      if (p) {
-        p.style.transition = "color 0.6s ease";
-        p.style.color = "#4ade80"; // Verde successo
-        p.textContent = "Redirecting now...";
-      }
+    // Simulazione dati live
+    const simulateData = () => {
+        // CPU random (15% - 95%)
+        const cpu = Math.floor(Math.random() * (95 - 15) + 15);
+        document.getElementById('cpu-val').innerText = `${cpu}%`;
 
-      setTimeout(() => {
-        window.location.href = url;
-      }, 600); 
-    });
-  };
+        // Update mini bar chart
+        const bars = document.querySelectorAll('.bar');
+        bars.forEach(bar => {
+            const randomHeight = Math.floor(Math.random() * 100);
+            bar.style.height = `${randomHeight}%`;
+        });
 
-  // 1. Code Translator
-  if (firstTool) handleRedirect(firstTool, "https://code-translator-xi-dusky.vercel.app/");
-  
-  // 2. Gallery (Link aggiornato)
-  if (secondTool) handleRedirect(secondTool, "https://gallery-blond-six.vercel.app/");
-  
-  // 3. CodeBot AI
-  if (thirdTool) handleRedirect(thirdTool, "https://codebot-ai.vercel.app/");
+        // Latency random
+        const latency = Math.floor(Math.random() * (40 - 10) + 10);
+        document.getElementById('latency-val').innerText = `${latency}ms`;
+    };
+
+    // Event Listeners
+    window.addEventListener('scroll', updateUI);
+    window.addEventListener('resize', updateUI);
+    
+    // Inizializzazione
+    updateUI();
+    setInterval(simulateData, 3000); // Aggiorna dati ogni 3 secondi
 });
+
+// Funzione per il bottone Refresh
+function refreshMetrics() {
+    const btn = document.querySelector('.btn-p');
+    btn.innerText = "REFRESHING...";
+    btn.style.opacity = "0.5";
+    
+    setTimeout(() => {
+        btn.innerText = "REFRESH";
+        btn.style.opacity = "1";
+    }, 1000);
+}
