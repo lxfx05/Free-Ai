@@ -28,8 +28,8 @@ The site features four main utilities:
 ## 📁 Project Structure
 
 ```freeai-projectct/
-├── index.html       # Page structure with function, stule and locic
-├── README.md       # Project documentation
+├── index.html
+├── README.md
 ```
 
 ## 📌 Notes
