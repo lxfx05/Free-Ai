@@ -3,56 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Dashboard | Luca Finaldi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Luca Finaldi | Systems Architect</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="progress-wrap"><div id="scrollBar"></div></div>
+
+    <div class="progress-wrap">
+        <div id="scrollBar"></div>
+    </div>
 
     <header class="reveal">
-        <nav class="breadcrumb">Sistemi Core / Dashboard / <span class="active-node">Live Metrics</span></nav>
-        <h1>System Health <span class="dot">.</span></h1>
+        <h1>Sistemi Core <span class="accent-dot">.</span></h1>
+        <p>Ingegneria del software, architetture backend e intelligenza artificiale applicata.</p>
     </header>
 
-    <main class="dashboard-grid">
+    <main class="grid">
         <div class="card reveal">
-            <div class="card-header">
-                <i class="fas fa-microchip"></i>
-                <span class="status-tag online">Live</span>
-            </div>
-            <h3>CPU Load</h3>
-            <div class="metric-value" id="cpu-val">24%</div>
-            <div class="chart-container">
-                <div class="bar-chart">
-                    <div class="bar" style="height: 40%"></div>
-                    <div class="bar" style="height: 60%"></div>
-                    <div class="bar" style="height: 45%"></div>
-                    <div class="bar" style="height: 80%"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card reveal">
-            <div class="card-header">
-                <i class="fas fa-bolt"></i>
-                <span class="status-tag warning">High Traffic</span>
-            </div>
-            <h3>AI Tokens/sec</h3>
-            <div class="metric-value" id="token-val">1.2k</div>
-            <p>Utilizzo combinato CodeBot & Free-Ai nelle ultime 24h.</p>
-        </div>
-
-        <div class="card reveal">
-            <div class="card-header">
-                <i class="fas fa-server"></i>
-            </div>
-            <h3>Network Latency</h3>
-            <div class="metric-value" id="latency-val">14ms</div>
+            <i class="fas fa-robot"></i>
+            <h3>CodeBot AI</h3>
+            <p>Sistema avanzato di audit e supporto al debugging potenziato da modelli LLM locali e cloud.</p>
             <div class="btn-flex">
-                <button class="btn-p" onclick="refreshMetrics()">REFRESH</button>
-                <button class="btn-s">LOGS</button>
+                <a href="https://github.com/lxfx05/Codebot-Ai-/blob/main/README.md" target="_blank" class="btn-s">README</a>
+                <a href="https://codebot-ai.vercel.app/" target="_blank" class="btn-p">OPEN AI</a>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <i class="fas fa-brain"></i>
+            <h3>Free-Ai</h3>
+            <p>Framework open-source per l'integrazione di intelligenza artificiale in architetture full-stack moderne.</p>
+            <div class="btn-flex">
+                <a href="https://github.com/lxfx05/Free-Ai/blob/main/README.md" target="_blank" class="btn-s">README</a>
+                <a href="https://lxfx05.github.io/Free-Ai/" target="_blank" class="btn-p">TEST SYSTEM</a>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <i class="fas fa-terminal"></i>
+            <h3>Translator</h3>
+            <p>Motore di conversione sintattica progettato per la migrazione rapida di logica tra diversi linguaggi.</p>
+            <div class="btn-flex">
+                <a href="https://github.com/lxfx05/Code-Translator/blob/main/README.md" target="_blank" class="btn-s">README</a>
+                <a href="https://code-translator-xi-dusky.vercel.app/" target="_blank" class="btn-p">CONVERT</a>
             </div>
         </div>
     </main>
