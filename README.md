@@ -10,7 +10,7 @@ To provide a lightweight and transparent alternative to heavy AI systems, empowe
 
 The site features four main utilities:
 
-- 🖼️ **Image Upscaler (in deployment...)**
+- 🖼️ **Image documentation**
   Enhance image quality using optimized, lightweight algorithms.
 
 - 💻 **Code Helper**
@@ -28,10 +28,8 @@ The site features four main utilities:
 ## 📁 Project Structure
 
 ```freeai-projectct/
-├── index.html       # Page structure
-├── styles.css       # Styling and themes
-├── script.js        # Interactive functions
-└── README.md        # Project documentation
+├── index.html       # Page structure with function, stule and locic
+├── README.md       # Project documentation
 ```
 
 ## 📌 Notes
