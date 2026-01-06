@@ -1,36 +1,62 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FreeAI Tools</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Dashboard | Luca Finaldi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>FreeAI Toolbox</h1>
-    <p>A curated set of smart tools to boost your productivity and creativity</p>
-  </header>
-  <main class="grid">
+    <div class="progress-wrap"><div id="scrollBar"></div></div>
 
-    <section id="tool-1" class="card">
-      <div class="icon">💻</div>
-      <h2>Code Translator</h2>
-      <p>Translate with convert to A language program to B language program, based on library</p>
-    </section>
+    <header class="reveal">
+        <nav class="breadcrumb">Sistemi Core / Dashboard / <span class="active-node">Live Metrics</span></nav>
+        <h1>System Health <span class="dot">.</span></h1>
+    </header>
 
-    <section id="tool-2" class="card">
-      <div class="icon">🖼️</div>
-      <h2>Image Upscaler</h2>
-      <p>Enhance image quality using optimized and lightweight algorithms.</p>
-    </section>
+    <main class="dashboard-grid">
+        <div class="card reveal">
+            <div class="card-header">
+                <i class="fas fa-microchip"></i>
+                <span class="status-tag online">Live</span>
+            </div>
+            <h3>CPU Load</h3>
+            <div class="metric-value" id="cpu-val">24%</div>
+            <div class="chart-container">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                    <div class="bar" style="height: 45%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                </div>
+            </div>
+        </div>
 
-    <section id="tool-3" class="card">
-      <div class="icon">🤖</div>
-      <h2>Free Bot</h2>
-      <p>A free bot to ask anything, delivering clear and controlled answers.</p>
-    </section>
+        <div class="card reveal">
+            <div class="card-header">
+                <i class="fas fa-bolt"></i>
+                <span class="status-tag warning">High Traffic</span>
+            </div>
+            <h3>AI Tokens/sec</h3>
+            <div class="metric-value" id="token-val">1.2k</div>
+            <p>Utilizzo combinato CodeBot & Free-Ai nelle ultime 24h.</p>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-header">
+                <i class="fas fa-server"></i>
+            </div>
+            <h3>Network Latency</h3>
+            <div class="metric-value" id="latency-val">14ms</div>
+            <div class="btn-flex">
+                <button class="btn-p" onclick="refreshMetrics()">REFRESH</button>
+                <button class="btn-s">LOGS</button>
+            </div>
+        </div>
+    </main>
+
     <script src="script.js"></script>
-  </main>
 </body>
 </html>
