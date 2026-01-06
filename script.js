@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Code Translator
   if (firstTool) handleRedirect(firstTool, "https://code-translator-xi-dusky.vercel.app/");
   
-  // 2. Ore Li K (Destinazione corretta per la card Gallery)
-  if (secondTool) handleRedirect(secondTool, "https://ore-li-k.vercel.app/");
+  // 2. Gallery (Link aggiornato)
+  if (secondTool) handleRedirect(secondTool, "https://gallery-blond-six.vercel.app/");
   
   // 3. CodeBot AI
   if (thirdTool) handleRedirect(thirdTool, "https://codebot-ai.vercel.app/");
