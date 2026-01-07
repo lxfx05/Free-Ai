@@ -2,143 +2,263 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luca Finaldi | Systems Architect</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         :root {
-            --bg: #050507; 
-            --surface: rgba(18, 18, 23, 0.85); 
-            --text: #f4f4f5; 
-            --text-dim: #9494a3;
-            --accent: #3b82f6; 
-            --border: rgba(255,255,255,0.08);
-            --card-glow: rgba(59, 130, 246, 0.15);
+            --bg: #050507; --surface: rgba(22, 22, 28, 0.95); --text: #f4f4f5; --text-dim: #9494a3;
+            --accent: #3b82f6; --border: rgba(255,255,255,0.12);
+            --wa-color: #28d146; --mail-color: #007aff;
+            --speed: 18s;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        body.light-mode {
+            --bg: #f2f2f7; --surface: rgba(255, 255, 255, 0.95); --text: #1c1c1e; --text-dim: #8e8e93;
+            --accent: #007aff; --border: rgba(0,0,0,0.1);
+        }
+
         body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            overflow-x: hidden;
+            background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; 
+            transition: background 0.3s; overflow-x: hidden; width: 100%;
         }
 
-        .progress-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: transparent; z-index: 1001; }
-        #scrollBar { height: 100%; background: var(--accent); width: 0%; box-shadow: 0 0 10px var(--accent); }
-
-        header { text-align: center; margin-bottom: 4rem; max-width: 800px; }
-        h1 { font-family: 'Space Grotesk'; font-size: 2.8rem; letter-spacing: -2px; margin-bottom: 12px; }
-        header p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.5; }
-
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 1.5rem; 
-            width: 100%;
-            max-width: 1100px;
-        }
-
-        .card { 
-            background: var(--surface); 
-            backdrop-filter: blur(20px);
-            padding: 2.5rem; 
-            border-radius: 32px; 
-            border: 1px solid var(--border); 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover { 
-            transform: translateY(-8px); 
-            border-color: var(--accent); 
-            box-shadow: 0 20px 40px var(--card-glow); 
-        }
-
-        .card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.2rem; }
-        .card h3 { font-family: 'Space Grotesk'; font-size: 1.6rem; margin-bottom: 10px; color: #fff; }
-        .card p { font-size: 0.95rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
-
-        .btn-flex { display: flex; gap: 12px; }
-        .btn-p { flex: 1.2; padding: 14px; border-radius: 16px; background: var(--accent); color: white; text-align: center; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
-        .btn-s { flex: 1; padding: 14px; border-radius: 16px; background: rgba(120,120,128,0.1); color: var(--text); text-align: center; text-decoration: none; font-weight: 600; font-size: 0.85rem; border: 0.5px solid var(--border); transition: 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         
-        .btn-p:hover { filter: brightness(1.15); transform: scale(1.02); }
-        .btn-s:hover { background: rgba(120,120,128,0.2); border-color: var(--text-dim); }
+        nav { height: 60px; padding: 0 6%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; background: var(--surface); backdrop-filter: blur(30px); z-index: 1000; border-bottom: 1px solid var(--border); }
+        .nav-socials { display: flex; gap: 35px; align-items: center; }
+        .nav-socials a { color: var(--text); font-size: 1.4rem; transition: 0.2s; }
+        .nav-socials a:hover { color: var(--accent); transform: translateY(-2px); }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .progress-wrap { position: fixed; top: 60px; left: 0; width: 100%; height: 4px; z-index: 1001; }
+        #scrollBar { height: 100%; background: var(--accent); width: 0%; }
+
+        section { padding: 3rem 6%; max-width: 1100px; margin: 0 auto; }
+
+        /* Hero & Radar */
+        .hero-container { padding-top: 120px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .avatar-box { width: 110px; height: 110px; border-radius: 30px; overflow: hidden; border: 2px solid var(--border); margin-bottom: 20px; }
+        
+        .hero-description {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-dim);
+            padding: 0 20px;
+        }
+
+        .expertise-box { width: 100%; max-width: 380px; margin: 20px auto; padding: 20px; background: var(--surface); border-radius: 30px; border: 1px solid var(--border); }
+
+        /* Marquee */
+        .tech-stack-container { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: 1rem 0; }
+        .marquee-row { display: flex; gap: 50px; width: max-content; margin-bottom: 20px; }
+        .row-1 { animation: scroll-left var(--speed) linear infinite; }
+        .row-2 { animation: scroll-right var(--speed) linear infinite; }
+        @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+        /* Aziende */
+        .company-marquee { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: 3rem 0; }
+        .company-inner { display: flex; gap: 80px; animation: scroll-left 25s linear infinite; width: max-content; align-items: center; }
+        .partner-img { height: 50px; object-fit: contain; }
+
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { 
+            background: var(--surface); padding: 2rem; border-radius: 28px; border: 1px solid var(--border); 
+            transition: 0.3s ease-out; opacity: 0; transform: translateY(20px);
+        }
+        .card.active { opacity: 1; transform: translateY(0); }
+        .card:hover { border-color: var(--accent); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+
+        .course-labels { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .label-pill { 
+            background: rgba(120,120,128,0.12); color: var(--text); padding: 7px 14px; 
+            border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-decoration: none; border: 1px solid var(--border);
+        }
+        .label-pill:hover { background: var(--accent); color: white; }
+
+        .contact-box { background: var(--surface); border-radius: 35px; border: 1px solid var(--border); padding: 2.5rem; max-width: 480px; margin: 4rem auto; }
+        input, select { width: 100%; padding: 16px; border-radius: 16px; background: rgba(120,120,128,0.12); border: 1px solid transparent; color: var(--text); margin-bottom: 12px; outline: none; }
+        .btn-ios { width: 100%; padding: 18px; border-radius: 20px; font-weight: 800; border: none; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div style="font-weight: 800; font-family: 'Space Grotesk';">LUCA<span style="color:var(--accent)">.</span>F</div>
+        <div class="nav-socials">
+            <a href="https://github.com/lxfx05" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="deezer://www.deezer.com/profile/6471202281" onclick="window.location.href='https://www.deezer.com/profile/6471202281'; return false;"><i class="fa-brands fa-deezer"></i></a>
+            <a href="https://www.reddit.com/u/xpfarmer05/s/NkIajbo9o2" target="_blank"><i class="fab fa-reddit-alien"></i></a>
+            <i class="fas fa-sun" id="themeSwitcher" style="cursor:pointer"></i>
+        </div>
+    </nav>
+
     <div class="progress-wrap"><div id="scrollBar"></div></div>
 
-    <header class="reveal">
-        <h1>Sistemi Core <span style="color:var(--accent)">.</span></h1>
-        <p>Ingegneria del software, architetture backend e intelligenza artificiale applicata.</p>
-    </header>
+    <main>
+        <section class="hero-container">
+            <div class="avatar-box"><img src="https://github.com/lxfx05.png" style="width:100%"></div>
+            
+            <h1 style="font-family: 'Space Grotesk'; font-size: 2.5rem;">Luca Finaldi</h1>
+            <p style="color: var(--accent); font-weight: 700; font-size: 1.1rem; min-height: 1.2em;" id="type-text"></p>
+            
+            <div class="hero-description reveal">
+                Specializzato nella progettazione di architetture scalabili, sicurezza offensiva e integrazione di modelli AI locali. Trasformo complessità tecnica in soluzioni fluide ed efficienti.
+            </div>
 
-    <main class="grid">
-        <div class="card reveal">
-            <i class="fas fa-robot"></i>
-            <h3>CodeBot AI</h3>
-            <p>Sistema avanzato di audit e supporto al debugging potenziato da modelli LLM per l'analisi del codice in tempo reale.</p>
-            <div class="btn-flex">
-                <a href="https://github.com/lxfx05/Codebot-Ai-/blob/main/README.md" target="_blank" class="btn-s">README</a>
-                <a href="https://codebot-ai.vercel.app/" target="_blank" class="btn-p">VISIT</a>
+            <div class="expertise-box reveal">
+                <canvas id="skillChart"></canvas>
+            </div>
+        </section>
+
+        <div class="tech-stack-container">
+            <div class="marquee-row row-1" id="techRow1"></div>
+            <div class="marquee-row row-2" id="techRow2"></div>
+        </div>
+
+        <section class="grid">
+            <div class="card reveal">
+                <h3 style="font-family: 'Space Grotesk';">CodeBot Ai</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px;">Audit di sistema tramite LLM locale con focus su privacy e performance.</p>
+                <a href="https://codeai.vercel.app/" target="_blank" style="display:block; padding:12px; background:var(--accent); border-radius:12px; text-align:center; text-decoration:none; color:white; font-size:0.8rem; font-weight:700; margin-top:20px;">LANCIA DEMO</a>
+            </div>
+            
+            <div class="card reveal">
+                <h3 style="font-family: 'Space Grotesk';">Free-Ai</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px;">Sperimentazione di intelligenza artificiale full-stack operante offline.</p>
+                <a href="https://lxfx05.github.io/Free-Ai/" target="_blank" style="display:block; padding:12px; background:var(--accent); border-radius:12px; text-align:center; text-decoration:none; color:white; font-size:0.8rem; font-weight:700; margin-top:20px;">VEDI CODICE</a>
+            </div>
+
+            <div class="card reveal">
+                <h3 style="font-family: 'Space Grotesk';">Password Gen</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px;">Utility crittografica per la generazione di password ad alta entropia.</p>
+                <a href="https://password-seven-pink.vercel.app/" target="_blank" style="display:block; padding:12px; background:var(--accent); border-radius:12px; text-align:center; text-decoration:none; color:white; font-size:0.8rem; font-weight:700; margin-top:20px;">APRI TOOL</a>
+            </div>
+
+            <div class="card reveal">
+                <h3 style="font-family: 'Space Grotesk';">Education</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 8px;">Stack tecnologico e certificazioni acquisite.</p>
+                <div class="course-labels">
+                    <a href="https://www.python.org/" target="_blank" class="label-pill">Python Expert</a>
+                    <a href="https://cloud.google.com/" target="_blank" class="label-pill">Google Cloud</a>
+                    <a href="https://www.docker.com/" target="_blank" class="label-pill">Docker</a>
+                    <a href="https://www.hackthebox.com/" target="_blank" class="label-pill">HTB Labs</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="company-marquee">
+            <div class="company-inner">
+                <img src="https://aimage.it/wp-content/uploads/2024/07/aimage-400x300-1.png" class="partner-img">
+                <img src="https://goonnet.it/storage/Main-240x92-1.webp" class="partner-img">
+                <img src="https://loonacode.it/wp-content/uploads/2024/01/rsz_imagefinalresize3.png" class="partner-img">
+                <img src="https://www.centroservizitotali.it/wp-content/uploads/2019/08/ProntoPro-logo-startup-jobs.png" class="partner-img">
+                <img src="https://www.greatplacetowork.it/wp-content/uploads/2025/04/LOGO_algomera.png" class="partner-img">
+                <img src="https://aimage.it/wp-content/uploads/2024/07/aimage-400x300-1.png" class="partner-img">
+                <img src="https://goonnet.it/storage/Main-240x92-1.webp" class="partner-img">
+                <img src="https://loonacode.it/wp-content/uploads/2024/01/rsz_imagefinalresize3.png" class="partner-img">
+                <img src="https://www.centroservizitotali.it/wp-content/uploads/2019/08/ProntoPro-logo-startup-jobs.png" class="partner-img">
             </div>
         </div>
 
-        <div class="card reveal">
-            <i class="fas fa-layer-group"></i>
-            <h3>Visual Gallery</h3>
-            <p>Interfaccia immersiva per l'esplorazione di asset multimediali con focus su performance e fluidità dell'interfaccia.</p>
-            <div class="btn-flex">
-                <a href="https://github.com/lxfx05" target="_blank" class="btn-s">REPO</a>
-                <a href="https://gallery-blond-six.vercel.app/" target="_blank" class="btn-p">OPEN</a>
+        <section id="contact">
+            <div class="contact-box reveal">
+                <h2 style="margin-bottom: 1.5rem; text-align: center; font-family: 'Space Grotesk';">Contatti</h2>
+                <select id="reqType" onchange="toggleRepoUI()">
+                    <option value="new">Nuovo Progetto</option>
+                    <option value="repo">Audit GitHub</option>
+                </select>
+                <div id="repoWrapper" style="display:none;"><select id="repoDrop"></select></div>
+                <input type="text" id="userName" placeholder="Il tuo nome">
+                <button onclick="sendMsg('wa')" class="btn-ios" style="background:var(--wa-color); color:white; margin-bottom:10px;"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                <button onclick="sendMsg('mail')" class="btn-ios" style="background:var(--mail-color); color:white"><i class="fas fa-envelope"></i> Email</button>
             </div>
-        </div>
-
-        <div class="card reveal">
-            <i class="fas fa-terminal"></i>
-            <h3>Translator</h3>
-            <p>Motore di conversione sintattica progettato per la migrazione rapida di logica tra diversi linguaggi di programmazione.</p>
-            <div class="btn-flex">
-                <a href="https://github.com/lxfx05/Code-Translator/blob/main/README.md" target="_blank" class="btn-s">README</a>
-                <a href="https://code-translator-xi-dusky.vercel.app/" target="_blank" class="btn-p">CONVERT</a>
-            </div>
-        </div>
+        </section>
     </main>
 
     <script>
-        const updateUI = () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            const bar = document.getElementById('scrollBar');
-            if(bar) bar.style.width = scrolled + "%";
-            
-            document.querySelectorAll('.reveal').forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if(rect.top < window.innerHeight - 50) el.classList.add('active');
-            });
+        // Radar Chart
+        new Chart(document.getElementById('skillChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Security', 'AI', 'Backend', 'Frontend', 'DevOps', 'Systems'],
+                datasets: [{ 
+                    data: [95, 92, 88, 75, 85, 90], 
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)', 
+                    borderColor: '#3b82f6', 
+                    borderWidth: 2,
+                    pointBackgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                scales: { r: { grid: { color: 'rgba(255,255,255,0.1)' }, angleLines: { color: 'rgba(255,255,255,0.1)' }, ticks: { display: false }, pointLabels: { color: '#9494a3', font: { size: 10 } } } },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // GitHub Sync
+        async function syncGitHub() {
+            try {
+                const res = await fetch('https://api.github.com/users/lxfx05/repos?sort=updated');
+                const repos = await res.json();
+                document.getElementById('repoDrop').innerHTML = repos.map(r => `<option value="${r.name}">${r.name}</option>`).join('');
+            } catch(e) {}
+        }
+        function toggleRepoUI() { document.getElementById('repoWrapper').style.display = document.getElementById('reqType').value === 'repo' ? 'block' : 'none'; }
+        syncGitHub();
+
+        // Theme
+        document.getElementById('themeSwitcher').onclick = function() {
+            document.body.classList.toggle('light-mode');
+            this.className = document.body.classList.contains('light-mode') ? 'fas fa-moon' : 'fas fa-sun';
         };
 
-        window.addEventListener('scroll', updateUI);
-        window.addEventListener('load', updateUI);
-        setTimeout(updateUI, 100);
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.onscroll = () => {
+            let winScroll = document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('scrollBar').style.width = (winScroll / height) * 100 + "%";
+        };
+
+        // Typewriter
+        const roles = ["Fullstack Developer", "Security Researcher", "AI Engineer"];
+        let r=0, c=0, del=false;
+        function type() {
+            const text = roles[r];
+            const el = document.getElementById('type-text');
+            if(!el) return;
+            el.innerText = del ? text.substring(0, c--) : text.substring(0, c++);
+            if(!del && c > text.length) { del=true; setTimeout(type, 1500); return; }
+            if(del && c<0) { del=false; r=(r+1)%roles.length; c=0; }
+            setTimeout(type, del ? 50 : 100);
+        }
+        type();
+
+        // Icons
+        const r1 = ['python','js','docker','aws','bash','nextjs'];
+        const r2 = ['react','kali','git','linux','cpp','ts'];
+        document.getElementById('techRow1').innerHTML = r1.map(i => `<img src="https://skillicons.dev/icons?i=${i}" style="height:45px">`).join('').repeat(2);
+        document.getElementById('techRow2').innerHTML = r2.map(i => `<img src="https://skillicons.dev/icons?i=${i}" style="height:45px">`).join('').repeat(2);
+
+        function sendMsg(m) {
+            const n = document.getElementById('userName').value || "User";
+            const req = document.getElementById('reqType').value === 'repo' ? document.getElementById('repoDrop').value : "Progetto";
+            let msg = `Ciao Luca, sono ${n}. Richiedo contatto per: ${req}`;
+            if(m === 'wa') window.open(`https://wa.me/3924484032?text=${encodeURIComponent(msg)}`);
+            else window.location.href = `mailto:lucafinaldi3@gmail.com?subject=Inquiry&body=${msg}`;
+        }
     </script>
 </body>
 </html>
