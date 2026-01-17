@@ -10,8 +10,9 @@ To provide a lightweight and transparent alternative to heavy AI systems, empowe
 
 The site features four main utilities:
 
-- 🖼️ **Image documentation**
-  Enhance image quality using optimized, lightweight algorithms.
+- ~~🖼️ Image editor~~
+Enhance image quality using optimized, lightweight algorithms (**in deployment**)
+
 
 - 💻 **Code Helper**
   Assist with code writing through simple and secure suggestions.
