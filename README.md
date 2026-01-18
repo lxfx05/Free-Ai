@@ -1,61 +1,62 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=990000&text=Free-Ai%20Core&section=header&reversal=false&fontSize=50&fontColor=ffffff&animation=twinkling" />
-</p>
+<div align='center'>
 
-<div align="center">
+# 🛡️ **Free-Ai Core**
+### *The Ultimate DNS Sinkholing & Network Security Suite*
 
-# 🛡️ **Free-Ai: The Privacy Fortress**
-### *Advanced DNS Sinkholing & Rate-Limiting System*
+<br />
 
-[![Status](https://img.shields.io/badge/Status-Active_Research-ff0000?style=for-the-badge&logo=target&logoColor=white)](https://github.com/lxfx05/Free-Ai)
-[![Security](https://img.shields.io/badge/Security-Audit_Passed-success?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/lxfx05/Free-Ai)
+![Status](https://img.shields.io/badge/DEVELOPMENT-ACTIVE-red?style=for-the-badge)
+![Security](https://img.shields.io/badge/PRIVACY-ON--PREMISE-white?style=for-the-badge)
+![License](https://img.shields.io/badge/LICENSE-MIT-3b82f6?style=for-the-badge)
+
+<br />
+
+**"Total control over your network traffic, powered by advanced logic and zero AI dependency."**
 
 ---
 
-### 🔴 **Project Vision**
-Free-Ai is my flagship project designed to regain control over digital environments. It combines **DNS Sinkholing** with smart **Rate-Limiting** to block unwanted tracking and optimize network traffic, all without relying on third-party AI dependencies. 🛡️⚡
-
 </div>
 
-### 🚀 **Technical Core**
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,js,bash,arch,kali,docker,supabase,linux,regex&theme=dark" />
+### 🚀 **Mission Objective**
+Free-Ai is a professional-grade security tool designed to protect your digital perimeter. It acts as a smart filter that blocks tracking, stops malicious DNS requests, and prevents spam through custom Rate-Limiting.
+
+### 🛠️ **System Architecture**
+<p align='center'>
+  <a href='https://skillicons.dev'>
+    <img src='https://skillicons.dev/icons?i=py,bash,linux,arch,kali,docker,supabase,regex,js&theme=dark' />
   </a>
 </p>
 
----
-
-### 💎 **Exclusive Features**
-* **DNS Sinkholing:** Instantly drop malicious requests and trackers before they reach your apps. 🚫
-* **Smart Rate-Limiting:** Protect your backend from spam and DDoS attacks with custom logic. ⏳
-* **Privacy Focused:** 100% On-Premise. Your data never touches external AI clouds. 🔒
-* **Low Latency:** Optimized for high-speed performance on Linux-based systems. 🏎️
+### 💎 **Pro Features**
+* **DNS Sinkholing** – Stop trackers and malware at the source. 🚫
+* **Custom Rate-Limiting** – Shield your backend from unwanted traffic spikes. ⏳
+* **Database Sync** – Secure and real-time logging via Supabase integration. 🔄
+* **Pure Logic** – Built using strategic entropy and Russian/Chinese analytical methods. 🧠
 
 ---
 
-### ⚙️ **Architecture Overview**
-This system is built to be a silent guardian. It sits between your network and the internet, filtering out the "noise" and keeping your projects clean, fast, and secure.
-
-1. **Traffic Analysis:** Real-time request monitoring.
-2. **Logic Filtering:** Custom rules for blocking/allowing traffic.
-3. **Database Logging:** Secure logs via Supabase for traffic auditing.
+### ⚙️ **Quick Deployment**
+\`\`\`bash
+git clone https://github.com/lxfx05/Free-Ai.git
+cd Free-Ai
+# Follow the setup guide in the docs folder
+\`\`\`
 
 ---
 
-<div align="center">
+<div align='center'>
 
-### 🤝 **Academic & Professional Reach**
-This project represents my research into **Russian & Chinese logic systems** applied to network security.
+### 🤝 **Work with me**
+*I am open to collaborations on security auditing and network optimization.*
 
-<a href="mailto:lucafinaldi3@gmail.com"><img src="https://img.shields.io/badge/Collaborate-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://lxfx05.github.io/Website/"><img src="https://img.shields.io/badge/Portfolio-3b82f6?style=for-the-badge&logo=google-chrome&logoColor=white" /></a>
+<a href='mailto:lucafinaldi3@gmail.com'><img src='https://img.shields.io/badge/Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white' /></a>
+<a href='https://lxfx05.github.io/Website/'><img src='https://img.shields.io/badge/My_Portfolio-3b82f6?style=for-the-badge&logo=google-chrome&logoColor=white' /></a>
 
-<br/>
+<br />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&size=24&duration=2000&pause=1000&center=true&vCenter=true&width=700&color=ff0000&lines=PRIVACY+IS+A+RIGHT;CONTROL+THE+TRAFFIC;SECURE+BY+LOGIC" />
+<img src='https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&size=24&duration=2000&pause=1000&center=true&vCenter=true&width=600&color=ff0000&lines=SECURITY+IS+NOT+AN+OPTION;CONTROL+THE+SOURCE;LOGIC+OVER+AI' />
 
 </div>
 
 ---
-*Maintained with precision by [Luca Finaldi](https://lxfx05.github.io/Website/)* 🏳️‍🌈
+*Developed with precision by [Luca Finaldi](https://lxfx05.github.io/Website/)* 🏳️‍🌈
