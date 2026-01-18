@@ -36,11 +36,11 @@ Free-Ai is a professional-grade security tool designed to protect your digital p
 ---
 
 ### ⚙️ **Quick Deployment**
-\`\`\`bash
+```bash
 git clone https://github.com/lxfx05/Free-Ai.git
 cd Free-Ai
 # Follow the setup guide in the docs folder
-\`\`\`
+```
 
 ---
 
