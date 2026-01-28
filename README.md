@@ -54,4 +54,4 @@ In a world obsessed with AI, this repo focuses on **strategic control**. By usin
 </div>
 
 ---
-*Created by [Luca Finaldi](https://lxfx05.github.io/Website/)* 🏳️‍🌈
+*Created by [Luca Finaldi](https://lxfx05.github.io/Website/)* 
